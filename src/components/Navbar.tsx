@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useLanguage, LanguageCode } from "@/contexts/LanguageContext";
 import { getTranslations } from "@/translations/translations";
+import './Navbar.css'
 
 // Language options with flag codes and display names
 const languages = [
@@ -33,16 +34,14 @@ export function Navbar() {
   };
 
   // Find the current language object
+  //<Anchor className="h-8 w-8 text-coastal-deep-blue mr-2" />
   const currentLangObj = languages.find(lang => lang.code === language) || languages[0];
 
   return (
     <header className="relative z-50">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <Anchor className="h-8 w-8 text-coastal-deep-blue mr-2" />
-          <span className="text-2xl font-display font-bold text-coastal-cliff">
-            Skaldjurscaféet
-          </span>
+          <img className="logo" src="./skaldjurscafet-logo.PNG" alt="" />
         </Link>
 
         {/* Desktop Navigation */}

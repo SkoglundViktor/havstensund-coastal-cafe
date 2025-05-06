@@ -1,0 +1,23 @@
+/* Container för att beskära bilden i höjdled */
+a.flex.items-center {
+    
+        height: 60px;            /* Sätt höjden på containern till 60px */
+        overflow: hidden;        /* Döljer delen av bilden som går utanför */
+        align-items: center;     /* Centrerar bilden horisontellt */
+        margin-left: -150px;      /* Justera för att centrera bilden om det behövs */
+           /* Centrerar bilden horisontellt */
+  }
+  
+  /* Gör bilden mindre och flytta upp den för att visa mitten */
+  .logo {
+    display: block;
+    width: auto;
+    height: auto;
+    transform: scale(0.4) translateY(-5px); /* Öka skalan och justera för att visa mer av bilden */
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  
+  
