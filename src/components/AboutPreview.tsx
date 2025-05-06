@@ -30,7 +30,7 @@ export function AboutPreview() {
           <div className="relative">
             <div className="aspect-square rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Havstensund strandlinje"
                 className="w-full h-full object-cover"
               />

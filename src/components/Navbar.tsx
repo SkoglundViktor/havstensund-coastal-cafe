@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Anchor, Menu, X, Globe } from "lucide-react";
+import { Anchor, Menu, X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,12 +10,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Language options with flag codes and display names
 const languages = [
-  { code: "se", name: "Svenska" },
-  { code: "no", name: "Norsk" },
-  { code: "dk", name: "Dansk" },
-  { code: "en", name: "English" },
-  { code: "de", name: "Deutsch" },
+  { code: "se", flag: "🇸🇪", name: "Svenska" },
+  { code: "no", flag: "🇳🇴", name: "Norsk" },
+  { code: "dk", flag: "🇩🇰", name: "Dansk" },
+  { code: "en", flag: "🇬🇧", name: "English" },
+  { code: "de", flag: "🇩🇪", name: "Deutsch" },
 ];
 
 export function Navbar() {
@@ -29,6 +30,9 @@ export function Navbar() {
     // In a real implementation, this would change the site's language
     console.log(`Language changed to ${code}`);
   };
+
+  // Find the current language object
+  const currentLangObj = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
   return (
     <header className="relative z-50">
@@ -57,19 +61,22 @@ export function Navbar() {
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Globe className="h-5 w-5" />
-                <span className="sr-only">Language</span>
+              <Button variant="ghost" size="sm" className="flex items-center space-x-1">
+                <span className="text-lg mr-1">{currentLangObj.flag}</span>
+                <span>{currentLangObj.code.toUpperCase()}</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="bg-white">
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
                   onClick={() => handleLanguageChange(language.code)}
-                  className={currentLanguage === language.code ? "font-bold" : ""}
+                  className={`flex items-center space-x-2 ${
+                    currentLanguage === language.code ? "font-bold bg-coastal-light-blue/30" : ""
+                  }`}
                 >
-                  {language.name}
+                  <span className="text-lg">{language.flag}</span>
+                  <span>{language.name}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -80,19 +87,22 @@ export function Navbar() {
         <div className="md:hidden flex items-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="mr-2 rounded-full">
-                <Globe className="h-5 w-5" />
-                <span className="sr-only">Language</span>
+              <Button variant="ghost" size="sm" className="flex items-center mr-2">
+                <span className="text-lg mr-1">{currentLangObj.flag}</span>
+                <span>{currentLangObj.code.toUpperCase()}</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="bg-white">
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
                   onClick={() => handleLanguageChange(language.code)}
-                  className={currentLanguage === language.code ? "font-bold" : ""}
+                  className={`flex items-center space-x-2 ${
+                    currentLanguage === language.code ? "font-bold bg-coastal-light-blue/30" : ""
+                  }`}
                 >
-                  {language.name}
+                  <span className="text-lg">{language.flag}</span>
+                  <span>{language.name}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
