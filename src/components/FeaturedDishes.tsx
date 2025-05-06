@@ -2,6 +2,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 const dishes = [
   {
@@ -28,15 +30,17 @@ const dishes = [
 ];
 
 export function FeaturedDishes() {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   return (
     <section className="container mx-auto px-4 py-16">
       <div className="text-center mb-10">
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-          Våra Specialiteter
+          {t.featuredTitle}
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Vi serverar färska skaldjur från västkusten, fångade med respekt för havet och 
-          tillagade med passion för god mat.
+          {t.featuredSubtitle}
         </p>
       </div>
 
@@ -64,7 +68,7 @@ export function FeaturedDishes() {
       <div className="text-center mt-10">
         <Link to="/menu">
           <Button size="lg" className="bg-coastal-blue hover:bg-coastal-deep-blue">
-            Se hela menyn
+            {t.viewFullMenu}
           </Button>
         </Link>
       </div>

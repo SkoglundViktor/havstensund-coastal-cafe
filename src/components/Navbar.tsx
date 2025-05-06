@@ -9,6 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage, LanguageCode } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 // Language options with flag codes and display names
 const languages = [
@@ -21,18 +23,17 @@ const languages = [
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("se");
+  const { language, setLanguage } = useLanguage();
+  const t = getTranslations(language);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  const handleLanguageChange = (code: string) => {
-    setCurrentLanguage(code);
-    // In a real implementation, this would change the site's language
-    console.log(`Language changed to ${code}`);
+  const handleLanguageChange = (code: LanguageCode) => {
+    setLanguage(code);
   };
 
   // Find the current language object
-  const currentLangObj = languages.find(lang => lang.code === currentLanguage) || languages[0];
+  const currentLangObj = languages.find(lang => lang.code === language) || languages[0];
 
   return (
     <header className="relative z-50">
@@ -47,16 +48,16 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="font-medium hover:text-coastal-deep-blue transition-colors">
-            Hem
+            {t.home}
           </Link>
           <Link to="/menu" className="font-medium hover:text-coastal-deep-blue transition-colors">
-            Meny
+            {t.menu}
           </Link>
           <Link to="/about" className="font-medium hover:text-coastal-deep-blue transition-colors">
-            Om oss
+            {t.about}
           </Link>
           <Link to="/contact" className="font-medium hover:text-coastal-deep-blue transition-colors">
-            Kontakt
+            {t.contact}
           </Link>
           
           <DropdownMenu>
@@ -67,16 +68,16 @@ export function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-white">
-              {languages.map((language) => (
+              {languages.map((lang) => (
                 <DropdownMenuItem
-                  key={language.code}
-                  onClick={() => handleLanguageChange(language.code)}
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code as LanguageCode)}
                   className={`flex items-center space-x-2 ${
-                    currentLanguage === language.code ? "font-bold bg-coastal-light-blue/30" : ""
+                    language === lang.code ? "font-bold bg-coastal-light-blue/30" : ""
                   }`}
                 >
-                  <span className="text-lg">{language.flag}</span>
-                  <span>{language.name}</span>
+                  <span className="text-lg">{lang.flag}</span>
+                  <span>{lang.name}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -93,16 +94,16 @@ export function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-white">
-              {languages.map((language) => (
+              {languages.map((lang) => (
                 <DropdownMenuItem
-                  key={language.code}
-                  onClick={() => handleLanguageChange(language.code)}
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code as LanguageCode)}
                   className={`flex items-center space-x-2 ${
-                    currentLanguage === language.code ? "font-bold bg-coastal-light-blue/30" : ""
+                    language === lang.code ? "font-bold bg-coastal-light-blue/30" : ""
                   }`}
                 >
-                  <span className="text-lg">{language.flag}</span>
-                  <span>{language.name}</span>
+                  <span className="text-lg">{lang.flag}</span>
+                  <span>{lang.name}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -128,28 +129,28 @@ export function Navbar() {
               className="block py-2 text-lg font-medium hover:text-coastal-deep-blue"
               onClick={toggleMenu}
             >
-              Hem
+              {t.home}
             </Link>
             <Link
               to="/menu"
               className="block py-2 text-lg font-medium hover:text-coastal-deep-blue"
               onClick={toggleMenu}
             >
-              Meny
+              {t.menu}
             </Link>
             <Link
               to="/about"
               className="block py-2 text-lg font-medium hover:text-coastal-deep-blue"
               onClick={toggleMenu}
             >
-              Om oss
+              {t.about}
             </Link>
             <Link
               to="/contact"
               className="block py-2 text-lg font-medium hover:text-coastal-deep-blue"
               onClick={toggleMenu}
             >
-              Kontakt
+              {t.contact}
             </Link>
           </div>
         </div>

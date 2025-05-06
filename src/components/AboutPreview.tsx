@@ -1,29 +1,30 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 export function AboutPreview() {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   return (
     <section className="bg-secondary py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Om Skaldjurscaféet
+              {t.aboutTitle}
             </h2>
             <p className="text-gray-700 mb-4">
-              Sedan 2005 har vi serverat det bästa från havet i vår restaurang i Havstensund. 
-              Med havet som närmsta granne och ett personligt engagemang för kvalitet har vi 
-              blivit en älskad destination för både lokalbefolkningen och turister.
+              {t.aboutParagraph1}
             </p>
             <p className="text-gray-700 mb-6">
-              Våra skaldjur kommer direkt från lokala fiskare och tillagas med omsorg för att bevara 
-              de naturliga smakerna. Här kan du njuta av en genuin smak av västkusten i en 
-              avslappnad och vacker miljö.
+              {t.aboutParagraph2}
             </p>
             <Link to="/about">
               <Button variant="outline" className="border-coastal-deep-blue text-coastal-deep-blue hover:bg-coastal-light-blue">
-                Läs mer om oss
+                {t.readMore}
               </Button>
             </Link>
           </div>

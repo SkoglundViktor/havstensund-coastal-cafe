@@ -7,8 +7,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,8 +35,8 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Meddelande skickat!",
-        description: "Vi kommer att kontakta dig så snart som möjligt.",
+        title: t.messageSent,
+        description: t.messageSentDescription,
       });
       setFormData({ name: "", email: "", phone: "", message: "" });
       setIsSubmitting(false);
@@ -53,10 +58,10 @@ const Contact = () => {
         
         <div className="relative z-10 container mx-auto px-4 py-16">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
-            Kontakta oss
+            {t.contact}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto text-center drop-shadow-md">
-            Vi ser fram emot att höra från dig och välkomna dig till vårt café
+            {t.findUsParagraph}
           </p>
         </div>
         
@@ -70,7 +75,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="font-display text-3xl font-bold mb-6">Kontaktinformation</h2>
+            <h2 className="font-display text-3xl font-bold mb-6">{t.contactTitle}</h2>
             
             <div className="space-y-5 mb-8">
               <div className="flex items-start">
@@ -78,7 +83,7 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">Adress</h3>
+                  <h3 className="font-display text-xl font-medium">{t.address}</h3>
                   <p className="text-gray-700">Sjövägen 43, 45773 Havstenssund</p>
                 </div>
               </div>
@@ -88,7 +93,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">Telefon</h3>
+                  <h3 className="font-display text-xl font-medium">{t.phone}</h3>
                   <p className="text-gray-700">
                     <a href="tel:+46706484748" className="hover:text-coastal-deep-blue">+46 70 648 47 48</a>
                   </p>
@@ -100,7 +105,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">E-post</h3>
+                  <h3 className="font-display text-xl font-medium">{t.email}</h3>
                   <p className="text-gray-700">
                     <a href="mailto:info@skaldjurscafeet.se" className="hover:text-coastal-deep-blue">info@skaldjurscafeet.se</a>
                   </p>
@@ -112,13 +117,11 @@ const Contact = () => {
                   <Clock className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">Öppettider</h3>
+                  <h3 className="font-display text-xl font-medium">{t.openingHours}</h3>
                   <div className="text-gray-700">
                     <div className="grid grid-cols-2 gap-x-2">
-                      <span>Mån-Fre:</span>
-                      <span>11:00 - 21:00</span>
-                      <span>Lör-Sön:</span>
-                      <span>12:00 - 22:00</span>
+                      <span>{t.mondayFriday}</span>
+                      <span>{t.saturdaySunday}</span>
                     </div>
                   </div>
                 </div>
@@ -140,15 +143,15 @@ const Contact = () => {
           </div>
           
           <div>
-            <h2 className="font-display text-3xl font-bold mb-6">Skicka ett meddelande</h2>
+            <h2 className="font-display text-3xl font-bold mb-6">{t.sendMessage}</h2>
             <p className="text-gray-600 mb-6">
-              Har du frågor, vill göra en bokning eller ge oss feedback? Fyll i formuläret nedan så återkommer vi så snart som möjligt.
+              {t.contactFormInfo}
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block font-medium mb-1">
-                  Namn
+                  {t.name}
                 </label>
                 <Input
                   id="name"
@@ -157,13 +160,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full"
-                  placeholder="Ditt namn"
+                  placeholder={t.name}
                 />
               </div>
               
               <div>
                 <label htmlFor="email" className="block font-medium mb-1">
-                  E-post
+                  {t.email}
                 </label>
                 <Input
                   id="email"
@@ -173,13 +176,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full"
-                  placeholder="din.email@exempel.se"
+                  placeholder={t.email}
                 />
               </div>
               
               <div>
                 <label htmlFor="phone" className="block font-medium mb-1">
-                  Telefon
+                  {t.phone}
                 </label>
                 <Input
                   id="phone"
@@ -187,13 +190,13 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full"
-                  placeholder="Ditt telefonnummer"
+                  placeholder={t.phone}
                 />
               </div>
               
               <div>
                 <label htmlFor="message" className="block font-medium mb-1">
-                  Meddelande
+                  {t.messageLabel}
                 </label>
                 <Textarea
                   id="message"
@@ -202,7 +205,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full min-h-[150px]"
-                  placeholder="Skriv ditt meddelande här..."
+                  placeholder={t.messageLabel}
                 />
               </div>
               
@@ -211,7 +214,7 @@ const Contact = () => {
                 className="w-full bg-coastal-deep-blue hover:bg-coastal-blue"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Skickar..." : "Skicka meddelande"}
+                {isSubmitting ? t.sending : t.submitButton}
               </Button>
             </form>
           </div>

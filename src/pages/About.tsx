@@ -1,8 +1,13 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -18,10 +23,10 @@ const About = () => {
         
         <div className="relative z-10 container mx-auto px-4 py-16">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
-            Om oss
+            {t.aboutUsTitle}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto text-center drop-shadow-md">
-            Lär känna historien bakom Skaldjurscaféet och vår passion för god mat och lokal tradition
+            {t.aboutUsSubtitle}
           </p>
         </div>
         
@@ -35,20 +40,15 @@ const About = () => {
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-16">
           <div>
-            <h2 className="font-display text-3xl font-bold mb-4">Vår Historia</h2>
+            <h2 className="font-display text-3xl font-bold mb-4">{t.ourHistoryTitle}</h2>
             <p className="text-gray-700 mb-4">
-              Skaldjurscaféet grundades 2005 av syskonen Lisa och Erik Lindgren, som båda är uppvuxna i Havstensund och har en djup 
-              kärlek till havet och den lokala matkulturen. Med erfarenheter från restaurangbranschen och en passion för färska, 
-              lokala råvaror, öppnade de ett litet café som erbjöd enkla men smakrika skaldjursrätter.
+              {t.ourHistoryP1}
             </p>
             <p className="text-gray-700 mb-4">
-              Genom åren har Skaldjurscaféet vuxit från ett enkelt café till en älskad restaurang som bevarar den 
-              genuina känslan och starka kopplingen till det lokala fiskesamhället. Vi är stolta över att kunna 
-              erbjuda en autentisk smakupplevelse av västkustens rikedomar.
+              {t.ourHistoryP2}
             </p>
             <p className="text-gray-700">
-              Idag drivs verksamheten av Erik tillsammans med hans fru Maria, som med sin kärlek till god mat och 
-              högklassig service fortsätter att göra Skaldjurscaféet till en av västkustens gastronomiska pärlor.
+              {t.ourHistoryP3}
             </p>
           </div>
           <div className="relative">
@@ -61,7 +61,7 @@ const About = () => {
         </div>
         
         <div className="bg-coastal-light-blue/30 py-12 px-6 md:px-10 rounded-lg mb-16">
-          <h2 className="font-display text-3xl font-bold mb-6 text-center">Vår Filosofi</h2>
+          <h2 className="font-display text-3xl font-bold mb-6 text-center">{t.ourPhilosophyTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -70,9 +70,9 @@ const About = () => {
                   <path d="M20.55 10.23A9 9 0 1 1 8 4.94"></path>
                 </svg>
               </div>
-              <h3 className="font-display text-xl font-medium mb-2">Hållbarhet</h3>
+              <h3 className="font-display text-xl font-medium mb-2">{t.sustainabilityTitle}</h3>
               <p className="text-gray-600">
-                Vi arbetar bara med lokala fiskare som använder hållbara fiskemetoder och respekterar havet och dess resurser.
+                {t.sustainabilityText}
               </p>
             </div>
             <div className="text-center">
@@ -82,9 +82,9 @@ const About = () => {
                   <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
                 </svg>
               </div>
-              <h3 className="font-display text-xl font-medium mb-2">Närproducerat</h3>
+              <h3 className="font-display text-xl font-medium mb-2">{t.localProduceTitle}</h3>
               <p className="text-gray-600">
-                Våra råvaror kommer från lokala producenter och fisket sker i närliggande vatten för att garantera färskhet och kvalitet.
+                {t.localProduceText}
               </p>
             </div>
             <div className="text-center">
@@ -94,16 +94,16 @@ const About = () => {
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
               </div>
-              <h3 className="font-display text-xl font-medium mb-2">Kvalitet</h3>
+              <h3 className="font-display text-xl font-medium mb-2">{t.qualityTitle}</h3>
               <p className="text-gray-600">
-                Vi kompromissar aldrig med kvaliteten och strävar alltid efter att servera de absolut fräschaste och godaste rätterna.
+                {t.qualityText}
               </p>
             </div>
           </div>
         </div>
         
         <div className="mb-16">
-          <h2 className="font-display text-3xl font-bold mb-6 text-center">Vårt Team</h2>
+          <h2 className="font-display text-3xl font-bold mb-6 text-center">{t.ourTeamTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="aspect-square rounded-full overflow-hidden w-48 h-48 mx-auto mb-4 border-4 border-white shadow-md">
@@ -114,9 +114,9 @@ const About = () => {
                 />
               </div>
               <h3 className="font-display text-xl font-medium">Erik Lindgren</h3>
-              <p className="text-coastal-deep-blue mb-2">Grundare & Köksmästare</p>
+              <p className="text-coastal-deep-blue mb-2">{t.founder}</p>
               <p className="text-gray-600">
-                Med över 25 års erfarenhet av matlagning har Erik en unik känsla för de lokala råvarorna och västkustens smaker.
+                {t.founderText}
               </p>
             </div>
             <div className="text-center">
@@ -128,9 +128,9 @@ const About = () => {
                 />
               </div>
               <h3 className="font-display text-xl font-medium">Maria Lindgren</h3>
-              <p className="text-coastal-deep-blue mb-2">Restaurangchef</p>
+              <p className="text-coastal-deep-blue mb-2">{t.manager}</p>
               <p className="text-gray-600">
-                Maria skapar den varma och välkomnande atmosfären i restaurangen och ser till att varje gäst känner sig som hemma.
+                {t.managerText}
               </p>
             </div>
             <div className="text-center">
@@ -142,9 +142,9 @@ const About = () => {
                 />
               </div>
               <h3 className="font-display text-xl font-medium">Thomas Berg</h3>
-              <p className="text-coastal-deep-blue mb-2">Kock</p>
+              <p className="text-coastal-deep-blue mb-2">{t.chef}</p>
               <p className="text-gray-600">
-                Thomas kreativa matlagningsstil och passion för skaldjur tillför nya spännande dimensioner till våra klassiska rätter.
+                {t.chefText}
               </p>
             </div>
           </div>

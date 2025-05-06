@@ -1,16 +1,21 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 export function ContactInfo() {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   return (
     <section className="container mx-auto px-4 py-16">
       <div className="text-center mb-10">
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-          Hitta till oss
+          {t.findUsTitle}
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Vi ser fram emot att få välkomna dig till vårt cafe i den idylliska fiskehamnen i Havstensund.
+          {t.findUsParagraph}
         </p>
       </div>
 
@@ -20,7 +25,7 @@ export function ContactInfo() {
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <MapPin className="h-7 w-7 text-coastal-deep-blue" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-2">Adress</h3>
+            <h3 className="font-display text-xl font-bold mb-2">{t.address}</h3>
             <p className="text-gray-600">Sjövägen 43</p>
             <p className="text-gray-600">45773 Havstenssund</p>
             <a 
@@ -29,7 +34,7 @@ export function ContactInfo() {
               rel="noopener noreferrer"
               className="text-coastal-deep-blue hover:underline mt-2"
             >
-              Visa på karta
+              {t.showOnMap}
             </a>
           </CardContent>
         </Card>
@@ -39,8 +44,8 @@ export function ContactInfo() {
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <Phone className="h-7 w-7 text-coastal-deep-blue" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-2">Kontakt</h3>
-            <p className="text-gray-600 mb-2">Ring för bokning eller frågor</p>
+            <h3 className="font-display text-xl font-bold mb-2">{t.contactSection}</h3>
+            <p className="text-gray-600 mb-2">{t.phone}</p>
             <a 
               href="tel:+46706484748" 
               className="text-coastal-deep-blue hover:underline font-medium"
@@ -55,13 +60,11 @@ export function ContactInfo() {
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <Clock className="h-7 w-7 text-coastal-deep-blue" />
             </div>
-            <h3 className="font-display text-xl font-bold mb-2">Öppettider</h3>
+            <h3 className="font-display text-xl font-bold mb-2">{t.openingHours}</h3>
             <div className="text-gray-600">
               <div className="grid grid-cols-2 gap-x-2 text-center">
-                <span>Mån-Fre:</span>
-                <span>11:00 - 21:00</span>
-                <span>Lör-Sön:</span>
-                <span>12:00 - 22:00</span>
+                <span>{t.mondayFriday}</span>
+                <span>{t.saturdaySunday}</span>
               </div>
             </div>
           </CardContent>

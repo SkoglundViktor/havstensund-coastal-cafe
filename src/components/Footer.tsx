@@ -1,8 +1,14 @@
 
 import { Link } from "react-router-dom";
 import { Anchor, MapPin, Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 export function Footer() {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-coastal-deep-blue text-white">
       <div className="wave-bg h-12"></div>
@@ -14,12 +20,12 @@ export function Footer() {
               <span className="text-xl font-display font-bold">Skaldjurscaféet</span>
             </Link>
             <p className="text-sm opacity-80">
-              Upplev det bästa av västkustens skaldjur i vår mysiga restaurang i hjärtat av Havstensund.
+              {t.footerTagline}
             </p>
           </div>
           
           <div>
-            <h4 className="font-display text-lg font-bold mb-4">Kontakt</h4>
+            <h4 className="font-display text-lg font-bold mb-4">{t.contactTitle}</h4>
             <div className="space-y-2">
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5" />
@@ -35,19 +41,17 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="font-display text-lg font-bold mb-4">Öppettider</h4>
+            <h4 className="font-display text-lg font-bold mb-4">{t.openingHours}</h4>
             <div className="grid grid-cols-2 gap-1">
-              <span className="opacity-80">Mån-Fre:</span>
-              <span>11:00 - 21:00</span>
-              <span className="opacity-80">Lör-Sön:</span>
-              <span>12:00 - 22:00</span>
+              <span className="opacity-80">{t.mondayFriday}</span>
+              <span className="opacity-80">{t.saturdaySunday}</span>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-6">
           <p className="text-sm opacity-70 text-center">
-            © {new Date().getFullYear()} Skaldjurscaféet. Alla rättigheter förbehållna.
+            © {currentYear} Skaldjurscaféet. {t.allRightsReserved}
           </p>
         </div>
       </div>

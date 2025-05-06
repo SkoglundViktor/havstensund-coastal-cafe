@@ -1,115 +1,120 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
-const menuCategories = [
-  {
-    id: "starters",
-    title: "Förrätter",
-    items: [
-      {
-        name: "Skagen på hembakt bröd",
-        description: "Handskalade räkor med dill, majonnäs och löjrom på hembakat bröd",
-        price: "145 kr",
-      },
-      {
-        name: "Ostron",
-        description: "Färska ostron från närliggande vatten, serveras med citron och schalottenlök i rödvinsvinäger",
-        price: "35 kr/st eller 195 kr/6 st",
-      },
-      {
-        name: "Fisksoppa",
-        description: "Krämig soppa med dagens fångst, saffran och aioli",
-        price: "165 kr",
-      },
-    ],
-  },
-  {
-    id: "mains",
-    title: "Huvudrätter",
-    items: [
-      {
-        name: "Skaldjursplatå",
-        description: "Havets läckerheter på ett fat med hummer, krabba, räkor och ostron",
-        price: "375 kr",
-      },
-      {
-        name: "Fisk- och skaldjursgryta",
-        description: "Dagens fisk, musslor, räkor och grönsaker i krämig tomat- och saffransbaserad sås",
-        price: "245 kr",
-      },
-      {
-        name: "Halstrad hälleflundra",
-        description: "Serveras med potatispuré, smörstekta havskräftor och brynt smör",
-        price: "275 kr",
-      },
-      {
-        name: "Räksmörgås",
-        description: "Klassisk smörgås med handskalade räkor på hembakat bröd",
-        price: "195 kr",
-      },
-      {
-        name: "Moules Frites",
-        description: "Blåmusslor kokta i vitt vin, vitlök och grädde. Serveras med pommes frites och aioli",
-        price: "215 kr",
-      },
-    ],
-  },
-  {
-    id: "desserts",
-    title: "Efterrätter",
-    items: [
-      {
-        name: "Crème Brûlée",
-        description: "Krämig vaniljcrème med knäckigt sockerlock",
-        price: "95 kr",
-      },
-      {
-        name: "Chokladfondant",
-        description: "Varm chokladfondant med hjärtformad vit chokladtryffel och bärcoulis",
-        price: "105 kr",
-      },
-      {
-        name: "Bärpaj",
-        description: "Säsongens färska bär i en hembakad smörpaj, serveras med vaniljglass",
-        price: "95 kr",
-      },
-    ],
-  },
-  {
-    id: "drinks",
-    title: "Drycker",
-    items: [
-      {
-        name: "Husets vita vin",
-        description: "Friskt vin med inslag av gröna äpplen och citrus",
-        price: "95 kr/glas, 375 kr/flaska",
-      },
-      {
-        name: "Husets röda vin",
-        description: "Medelfylligt vin med inslag av mörka bär och örter",
-        price: "95 kr/glas, 375 kr/flaska",
-      },
-      {
-        name: "Lokal öl",
-        description: "Olika sorters öl från lokala bryggerier",
-        price: "85 kr",
-      },
-      {
-        name: "Alkoholfri cider",
-        description: "Frisk och fruktig äppelcider",
-        price: "55 kr",
-      },
-      {
-        name: "Kaffe",
-        description: "Ekologiskt bryggkaffe",
-        price: "35 kr",
-      },
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 const Menu = () => {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
+  const menuCategories = [
+    {
+      id: "starters",
+      title: t.starters,
+      items: [
+        {
+          name: "Skagen på hembakt bröd",
+          description: "Handskalade räkor med dill, majonnäs och löjrom på hembakat bröd",
+          price: "145 kr",
+        },
+        {
+          name: "Ostron",
+          description: "Färska ostron från närliggande vatten, serveras med citron och schalottenlök i rödvinsvinäger",
+          price: "35 kr/st eller 195 kr/6 st",
+        },
+        {
+          name: "Fisksoppa",
+          description: "Krämig soppa med dagens fångst, saffran och aioli",
+          price: "165 kr",
+        },
+      ],
+    },
+    {
+      id: "mains",
+      title: t.mains,
+      items: [
+        {
+          name: "Skaldjursplatå",
+          description: "Havets läckerheter på ett fat med hummer, krabba, räkor och ostron",
+          price: "375 kr",
+        },
+        {
+          name: "Fisk- och skaldjursgryta",
+          description: "Dagens fisk, musslor, räkor och grönsaker i krämig tomat- och saffransbaserad sås",
+          price: "245 kr",
+        },
+        {
+          name: "Halstrad hälleflundra",
+          description: "Serveras med potatispuré, smörstekta havskräftor och brynt smör",
+          price: "275 kr",
+        },
+        {
+          name: "Räksmörgås",
+          description: "Klassisk smörgås med handskalade räkor på hembakat bröd",
+          price: "195 kr",
+        },
+        {
+          name: "Moules Frites",
+          description: "Blåmusslor kokta i vitt vin, vitlök och grädde. Serveras med pommes frites och aioli",
+          price: "215 kr",
+        },
+      ],
+    },
+    {
+      id: "desserts",
+      title: t.desserts,
+      items: [
+        {
+          name: "Crème Brûlée",
+          description: "Krämig vaniljcrème med knäckigt sockerlock",
+          price: "95 kr",
+        },
+        {
+          name: "Chokladfondant",
+          description: "Varm chokladfondant med hjärtformad vit chokladtryffel och bärcoulis",
+          price: "105 kr",
+        },
+        {
+          name: "Bärpaj",
+          description: "Säsongens färska bär i en hembakad smörpaj, serveras med vaniljglass",
+          price: "95 kr",
+        },
+      ],
+    },
+    {
+      id: "drinks",
+      title: t.drinks,
+      items: [
+        {
+          name: "Husets vita vin",
+          description: "Friskt vin med inslag av gröna äpplen och citrus",
+          price: "95 kr/glas, 375 kr/flaska",
+        },
+        {
+          name: "Husets röda vin",
+          description: "Medelfylligt vin med inslag av mörka bär och örter",
+          price: "95 kr/glas, 375 kr/flaska",
+        },
+        {
+          name: "Lokal öl",
+          description: "Olika sorters öl från lokala bryggerier",
+          price: "85 kr",
+        },
+        {
+          name: "Alkoholfri cider",
+          description: "Frisk och fruktig äppelcider",
+          price: "55 kr",
+        },
+        {
+          name: "Kaffe",
+          description: "Ekologiskt bryggkaffe",
+          price: "35 kr",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -125,10 +130,10 @@ const Menu = () => {
         
         <div className="relative z-10 container mx-auto px-4 py-16">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
-            Vår Meny
+            {t.menuPageTitle}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto text-center drop-shadow-md">
-            Tillagad med kärlek och de färskaste råvarorna från havet och lokala producenter
+            {t.menuPageSubtitle}
           </p>
         </div>
         
@@ -141,8 +146,7 @@ const Menu = () => {
       
       <div className="container mx-auto px-4 py-6 mb-10">
         <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
-          Vår meny ändras efter säsong och tillgång, men nedan finner du ett urval av våra mest populära rätter. 
-          Alla skaldjur serveras med bröd, citron, aioli och tillbehör.
+          {t.menuDescription}
         </p>
         
         {menuCategories.map((category) => (
@@ -166,7 +170,7 @@ const Menu = () => {
 
         <div className="bg-coastal-light-blue/50 p-6 rounded-lg mt-10">
           <p className="text-center text-gray-700">
-            <strong>Allergier eller specialkost?</strong> Informera vår personal så hjälper vi dig med alternativ.
+            <strong>{t.allergiesNote}</strong>
           </p>
         </div>
       </div>

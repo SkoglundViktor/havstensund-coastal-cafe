@@ -2,8 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/translations/translations";
 
 export function Hero() {
+  const { language } = useLanguage();
+  const t = getTranslations(language);
+  
   return (
     <section className="relative overflow-hidden">
       <div 
@@ -17,21 +22,20 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 py-16 md:py-32">
         <div className="max-w-xl">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-            Välkommen till Skaldjurscaféet
+            {t.heroTitle}
           </h1>
           <p className="text-white text-lg md:text-xl mb-8 drop-shadow-md">
-            Upplev det bästa av västkustens skaldjur i vår mysiga restaurang i 
-            hjärtat av Havstensund.
+            {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/menu">
               <Button size="lg" className="bg-coastal-blue hover:bg-coastal-deep-blue">
-                Se vår meny
+                {t.viewMenu}
               </Button>
             </Link>
             <Link to="/contact">
               <Button size="lg" variant="outline" className="bg-white/90 hover:bg-white">
-                <MapPin className="mr-2 h-5 w-5" /> Hitta hit
+                <MapPin className="mr-2 h-5 w-5" /> {t.findUs}
               </Button>
             </Link>
           </div>
