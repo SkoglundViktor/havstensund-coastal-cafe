@@ -147,7 +147,7 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     starters: "Förrätter",
     mains: "Huvudrätter",
     desserts: "Efterrätter",
-    drinks: "Drycker",
+    drinks: "Till de små",
     
     // About
     aboutUsTitle: "Om oss",
@@ -234,7 +234,7 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     starters: "Forretter",
     mains: "Hovedretter",
     desserts: "Desserter",
-    drinks: "Drikke",
+    drinks: "For de små",
     
     // About
     aboutUsTitle: "Om oss",
@@ -321,7 +321,7 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     starters: "Forretter",
     mains: "Hovedretter",
     desserts: "Desserter",
-    drinks: "Drikkevarer",
+    drinks: "Til de små",
     
     // About
     aboutUsTitle: "Om os",
@@ -408,7 +408,7 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     starters: "Starters",
     mains: "Main Courses",
     desserts: "Desserts",
-    drinks: "Beverages",
+    drinks: "For the little ones",
     
     // About
     aboutUsTitle: "About Us",
@@ -495,7 +495,7 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     starters: "Vorspeisen",
     mains: "Hauptgerichte",
     desserts: "Desserts",
-    drinks: "Getränke",
+    drinks: "Für die Kleinen",
     
     // About
     aboutUsTitle: "Über uns",
