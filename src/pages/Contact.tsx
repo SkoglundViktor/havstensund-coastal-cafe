@@ -1,46 +1,76 @@
-
+import { useState, ChangeEvent, FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
-import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslations } from "@/translations/translations";
+import emailjs from '@emailjs/browser'; // Lägg till detta för EmailJS
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 const Contact = () => {
   const { language } = useLanguage();
   const t = getTranslations(language);
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      // Använd EmailJS för att skicka formulärdata
+      const result = await emailjs.send(
+        "service_df91cyq",      // Service ID
+        "template_3ep8c0e",     // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "eankGItpq-3Pqxb86"     // Public Key
+      );
+
+      // Visa toast vid lyckad skickning
       toast({
         title: t.messageSent,
         description: t.messageSentDescription,
       });
+
+      // Nollställ formuläret efter lyckad skickning
       setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      // Visa toast vid fel
+      toast({
+        title: error,
+        description: (error as Error).message,
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -78,46 +108,46 @@ const Contact = () => {
             <h2 className="font-display text-3xl font-bold mb-6">{t.contactTitle}</h2>
             
             <div className="space-y-5 mb-8">
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <div className="bg-coastal-light-blue rounded-full p-3 mr-4">
                   <MapPin className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">{t.address}</h3>
+                 
                   <p className="text-gray-700">Sjövägen 43, 45773 Havstenssund</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <div className="bg-coastal-light-blue rounded-full p-3 mr-4">
                   <Phone className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">{t.phone}</h3>
+                  
                   <p className="text-gray-700">
                     <a href="tel:+46706484748" className="hover:text-coastal-deep-blue">+46 70 648 47 48</a>
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <div className="bg-coastal-light-blue rounded-full p-3 mr-4">
                   <Mail className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">{t.email}</h3>
+                  
                   <p className="text-gray-700">
                     <a href="mailto:info@skaldjurscafeet.se" className="hover:text-coastal-deep-blue">info@skaldjurscafeet.se</a>
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <div className="bg-coastal-light-blue rounded-full p-3 mr-4">
                   <Clock className="h-6 w-6 text-coastal-deep-blue" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-medium">{t.openingHours}</h3>
+                 
                   <div className="text-gray-700">
                     <div className="grid grid-cols-2 gap-x-2">
                       <span>{t.mondayFriday}</span>
@@ -177,20 +207,6 @@ const Contact = () => {
                   required
                   className="w-full"
                   placeholder={t.email}
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="phone" className="block font-medium mb-1">
-                  {t.phone}
-                </label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full"
-                  placeholder={t.phone}
                 />
               </div>
               
