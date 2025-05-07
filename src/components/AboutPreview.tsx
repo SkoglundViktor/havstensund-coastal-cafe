@@ -31,14 +31,14 @@ export function AboutPreview() {
           <div className="relative">
             <div className="aspect-square rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="./Solnedgång.jpg"
                 alt="Havstensund strandlinje"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-4 -left-4 w-1/2 aspect-square rounded-lg overflow-hidden border-4 border-white shadow-lg hidden md:block">
               <img 
-                src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                src="./uteplats.jpg"
                 alt="Fiskehamn i Havstensund" 
                 className="w-full h-full object-cover"
               />

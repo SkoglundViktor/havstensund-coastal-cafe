@@ -51,11 +51,11 @@ const About = () => {
               {t.ourHistoryP3}
             </p>
           </div>
-          <div className="relative">
+          <div className="relative lg:pl-[200px]" >
             <img 
-              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="./uteplats.jpg" 
               alt="Havstensund fiskehamn" 
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md max-h-[400px] "
             />
           </div>
         </div>
@@ -102,53 +102,9 @@ const About = () => {
           </div>
         </div>
         
-        <div className="mb-16">
-          <h2 className="font-display text-3xl font-bold mb-6 text-center">{t.ourTeamTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="aspect-square rounded-full overflow-hidden w-48 h-48 mx-auto mb-4 border-4 border-white shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
-                  alt="Erik Lindgren"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-display text-xl font-medium">Erik Lindgren</h3>
-              <p className="text-coastal-deep-blue mb-2">{t.founder}</p>
-              <p className="text-gray-600">
-                {t.founderText}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="aspect-square rounded-full overflow-hidden w-48 h-48 mx-auto mb-4 border-4 border-white shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
-                  alt="Maria Lindgren"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-display text-xl font-medium">Maria Lindgren</h3>
-              <p className="text-coastal-deep-blue mb-2">{t.manager}</p>
-              <p className="text-gray-600">
-                {t.managerText}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="aspect-square rounded-full overflow-hidden w-48 h-48 mx-auto mb-4 border-4 border-white shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
-                  alt="Thomas Berg"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-display text-xl font-medium">Thomas Berg</h3>
-              <p className="text-coastal-deep-blue mb-2">{t.chef}</p>
-              <p className="text-gray-600">
-                {t.chefText}
-              </p>
-            </div>
-          </div>
-        </div>
+        
+          
+        
       </div>
       
       <Footer />

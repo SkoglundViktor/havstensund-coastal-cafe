@@ -11,7 +11,7 @@ const dishes = [
     description:
       "Havets läckerheter på ett fat med hummer, krabba, räkor och ostron",
     image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "./Havstenssundlånda.jpg",
     price: "375 kr",
   },
   {
@@ -23,10 +23,10 @@ const dishes = [
   },
   {
     id: 3,
-    name: "Räksmörgås",
+    name: "Räkmacka",
     description: "Klassisk smörgås med handskalade räkor på hembakat bröd",
     image:
-      "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "./Räkmacka.jpg",
     price: "195 kr",
   },
 ];
@@ -51,16 +51,17 @@ export function FeaturedDishes() {
             className="overflow-hidden hover:shadow-lg transition-shadow"
           >
             <div className="h-48 overflow-hidden">
-            <img
-  src={dish.image}
-  alt={dish.name}
-  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${
-    dish.id === 2 ? "object-[center_17%]" : ""
-  }`}
-/>
+  <img
+    src={dish.image}
+    alt={dish.name}
+    className={`w-full h-full object-cover transition-transform duration-500 
+      ${dish.id === 1 ? " " : ""} 
+      ${dish.id === 2 ? "object-[center_17%]" : ""}
+      ${dish.id === 3 ? "object-[center_45%]" : ""}
+    `}
+  />
+</div>
 
-              
-            </div>
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-2">
                 <h3 className="font-display text-xl font-bold">{dish.name}</h3>

@@ -12,12 +12,13 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
-          filter: "brightness(0.7)"
-        }}
-      ></div>
+  className="absolute inset-0 bg-cover bg-center z-0" 
+  style={{ 
+    backgroundImage: "url('./uteplats.jpg')",
+    filter: "brightness(0.7)"
+  }}
+></div>
+
       
       <div className="relative z-10 container mx-auto px-4 py-16 md:py-32">
         <div className="max-w-xl">

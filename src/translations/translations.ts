@@ -49,6 +49,7 @@ export type TranslationKeys = {
   messageSentDescription: string;
   
   // Menu
+  menuPage: string;
   menuPageTitle: string;
   menuPageSubtitle: string;
   menuDescription: string;
@@ -177,8 +178,9 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     messageSent: "Meddelande skickat!",
     messageSentDescription: "Vi kommer att kontakta dig så snart som möjligt.",
     
-    // Menu
-    menuPageTitle: "Vår Meny",
+    // Menu 
+    menuPage: "Vår meny",
+    menuPageTitle: "Förrätt",
     menuPageSubtitle: "Tillagad med kärlek och de färskaste råvarorna från havet och lokala producenter",
     menuDescription: "Vår meny ändras efter säsong och tillgång, men nedan finner du ett urval av våra mest populära rätter. Alla skaldjur serveras med bröd, citron, aioli och tillbehör.",
     allergiesNote: "Allergier eller specialkost? Informera vår personal så hjälper vi dig med alternativ.",
@@ -304,7 +306,8 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     messageSentDescription: "Vi vil kontakte deg så snart som mulig.",
     
     // Menu
-    menuPageTitle: "Vår Meny",
+    menuPage: "Vår meny",
+    menuPageTitle: "Forrett",
     menuPageSubtitle: "Tilberedt med kjærlighet og de ferskeste råvarene fra havet og lokale produsenter",
     menuDescription: "Vår meny endres med sesong og tilgjengelighet, men nedenfor finner du et utvalg av våre mest populære retter. Alle skalldyr serveres med brød, sitron, aioli og tilbehør.",
     allergiesNote: "Allergier eller spesialkost? Informer vårt personale, så hjelper vi deg med alternativer.",
@@ -430,7 +433,8 @@ iceCreamDescription: "Hindbærsorbet/sjokolade/vanilje/appelsinsjokolade",
     messageSentDescription: "Vi vil kontakte dig så hurtigt som muligt.",
     
     // Menu
-    menuPageTitle: "Vores Menu",
+    menuPage: "Vores menu",
+    menuPageTitle: "Forret",
     menuPageSubtitle: "Tilberedt med kærlighed og de friskeste råvarer fra havet og lokale producenter",
     menuDescription: "Vores menu ændres efter sæson og tilgængelighed, men nedenfor finder du et udvalg af vores mest populære retter. Alle skaldyr serveres med brød, citron, aioli og tilbehør.",
     allergiesNote: "Allergier eller specialkost? Informer vores personale, så hjælper vi dig med alternativer.",
@@ -558,7 +562,8 @@ iceCreamDescription: "Hindbærsorbet/chokolade/vanilje/appelsinchokolade",
     messageSentDescription: "We will contact you as soon as possible.",
     
     // Menu
-    menuPageTitle: "Our Menu",
+    menuPage: "Our menu",
+    menuPageTitle: "Starter",
     menuPageSubtitle: "Prepared with love and the freshest ingredients from the sea and local producers",
     menuDescription: "Our menu changes with the seasons and availability, but below you'll find a selection of our most popular dishes. All seafood is served with bread, lemon, aioli, and accompaniments.",
     allergiesNote: "Allergies or dietary requirements? Inform our staff and we'll help you with alternatives.",
@@ -685,7 +690,8 @@ iceCreamDescription: "Raspberry sorbet/chocolate/vanilla/orange chocolate",
     messageSentDescription: "Wir werden Sie so bald wie möglich kontaktieren.",
     
     // Menu
-    menuPageTitle: "Unsere Speisekarte",
+    menuPage: "Unsere Speisekarte",
+    menuPageTitle: "Vorspeise",
     menuPageSubtitle: "Zubereitet mit Liebe und den frischesten Zutaten aus dem Meer und von lokalen Produzenten",
     menuDescription: "Unsere Speisekarte ändert sich je nach Saison und Verfügbarkeit, aber unten finden Sie eine Auswahl unserer beliebtesten Gerichte. Alle Meeresfrüchte werden mit Brot, Zitrone, Aioli und Beilagen serviert.",
     allergiesNote: "Allergien oder Diätanforderungen? Informieren Sie unser Personal, und wir helfen Ihnen mit Alternativen.",
