@@ -53,6 +53,45 @@ export type TranslationKeys = {
   menuPageSubtitle: string;
   menuDescription: string;
   allergiesNote: string;
+  //huvudrätt
+  lobsterRollName: string;
+  lobsterRollDescription: string;
+  bruschettaName: string;
+  bruschettaDescription: string;
+  cevicheName: string;
+  cevicheDescription: string;
+  //För de små
+  friedChicken: string;
+  friedChickenDescription: string;
+  pancakes: string;
+  pancakesDescription: string;
+  // Huvudrätter
+  fishAndChips: string;
+  fishAndChipsDescription: string;
+  fishSoup: string;
+  fishSoupDescription: string;
+  havstenssundBox: string;
+  havstenssundBoxDescription: string;
+  caesarSalad: string;
+  caesarSaladDescription: string;
+  shrimpSandwich: string;
+  shrimpSandwichDescription: string;
+  burger: string;
+  burgerDescription: string;
+  steakFrites: string;
+  steakFritesDescription: string;
+  // Desserter
+  cremeBrulee: string;
+  cremeBruleeDescription: string;
+  brownie: string;
+  brownieDescription: string;
+  etonMess: string;
+  etonMessDescription: string;
+  iceCream: string;
+  iceCreamDescription: string;
+
+  
+  
   
   // Menu Categories
   starters: string;
@@ -86,6 +125,7 @@ export type TranslationKeys = {
   footerTagline: string;
   contactTitle: string;
   allRightsReserved: string;
+
 };
 
 // Define translations for each language
@@ -142,6 +182,45 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     menuPageSubtitle: "Tillagad med kärlek och de färskaste råvarorna från havet och lokala producenter",
     menuDescription: "Vår meny ändras efter säsong och tillgång, men nedan finner du ett urval av våra mest populära rätter. Alla skaldjur serveras med bröd, citron, aioli och tillbehör.",
     allergiesNote: "Allergier eller specialkost? Informera vår personal så hjälper vi dig med alternativ.",
+    //Förrätt
+    lobsterRollName: "Norwegian lobsterroll",
+    lobsterRollDescription: "Serveras med briochebröd & toppat med färsk dill",
+    bruschettaName: "Bruschetta",
+    bruschettaDescription: "Rostat bröd med hackad tomat, basilika & vitlök",
+    cevicheName: "Ceviche",
+    cevicheDescription: "Serveras med egengjord nachos & koriander",
+    //till de små
+    friedChicken: "Friterad kyckling",
+    friedChickenDescription: "Serveras med pommes & majonäs",
+    pancakes: "Pannkakor",
+    pancakesDescription: "Serveras med grädde & jordgubbssylt",
+    // Huvudrätter
+  fishAndChips: "Fish & chips",
+  fishAndChipsDescription: "Serveras med örtslungade pommes & tartarsås",
+  fishSoup: "Fisk & skaldjurs soppa",
+  fishSoupDescription: "Serveras med färskt bröd",
+  havstenssundBox: "Havstenssundslåda",
+  havstenssundBoxDescription: "Färska räkor & kräftor från Havstenssund serveras med färskt bröd & aioli",
+  caesarSalad: "Ceasarsallad",
+  caesarSaladDescription: "Välj mellan friterad kyckling/räkor/halloumi",
+  shrimpSandwich: "Räkmacka",
+  shrimpSandwichDescription: "Handskalade räkor på bröd med ägg, majonäs, sallad, tomat & picklad rödlök",
+  burger: "Burgare",
+  burgerDescription: "180 gram högrev, Väddö cheddar, picklad rödlök, crispsallad, tomat, brioche & tryffelmayo. Serveras med örtslungade pommes",
+  steakFrites: "Steak frites",
+  steakFritesDescription: "Serveras med örtslungade pommes, tomatsallad och bearnaisesås",
+  
+  // Desserter
+  cremeBrulee: "Crème Brûlee",
+  cremeBruleeDescription: "Toppad med färska bär",
+  brownie: "Brownie",
+  brownieDescription: "Serveras med grädde & färska bär",
+  etonMess: "Eton mess",
+  etonMessDescription: "Svensk marängsviss med limemarinerade svenska jordgubbar varvat med grädde och maräng",
+  iceCream: "Glass",
+  iceCreamDescription: "Hallonsorbet/choklad/vanilj/apelsinchoklad",
+
+
     
     // Menu Categories
     starters: "Förrätter",
@@ -229,6 +308,45 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     menuPageSubtitle: "Tilberedt med kjærlighet og de ferskeste råvarene fra havet og lokale produsenter",
     menuDescription: "Vår meny endres med sesong og tilgjengelighet, men nedenfor finner du et utvalg av våre mest populære retter. Alle skalldyr serveres med brød, sitron, aioli og tilbehør.",
     allergiesNote: "Allergier eller spesialkost? Informer vårt personale, så hjelper vi deg med alternativer.",
+    //huvudrätt
+    lobsterRollName: "Norsk hummer-roll",
+    lobsterRollDescription: "Serveres med briochebrød og toppet med frisk dill",
+    bruschettaName: "Bruschetta",
+    bruschettaDescription: "Ristet brød med hakket tomat, basilikum og hvitløk",
+    cevicheName: "Ceviche",
+    cevicheDescription: "Serveres med hjemmelagde nachos og koriander",
+    //till de små
+    friedChicken: "Fritert kylling",
+    friedChickenDescription: "Serveres med pommes frites & majones",
+    pancakes: "Pannekaker",
+    pancakesDescription: "Serveres med krem & jordbærsyltetøy",
+    // Hovedretter
+fishAndChips: "Fish & chips",
+fishAndChipsDescription: "Serveres med urteskylt pommes og tartarsaus",
+fishSoup: "Fisk- og skalldyrsuppe",
+fishSoupDescription: "Serveres med ferskt brød",
+havstenssundBox: "Havstenssund-boks",
+havstenssundBoxDescription: "Ferske reker og kreps fra Havstenssund serveres med ferskt brød og aioli",
+caesarSalad: "Caesarsalat",
+caesarSaladDescription: "Velg mellom fritert kylling/reker/halloumi",
+shrimpSandwich: "Rekesandwich",
+shrimpSandwichDescription: "Håndpillede reker på brød med egg, majones, salat, tomat og syltet rødløk",
+burger: "Hamburger",
+burgerDescription: "180 gram høyrygg, Väddö cheddar, syltet rødløk, crispsalat, tomat, brioche og trøffelmajones. Serveres med urteskylt pommes",
+steakFrites: "Steak frites",
+steakFritesDescription: "Serveres med urteskylt pommes, tomatsalat og béarnaisesaus",
+
+// Desserter
+cremeBrulee: "Crème Brûlée",
+cremeBruleeDescription: "Toppet med ferske bær",
+brownie: "Brownie",
+brownieDescription: "Serveres med krem og ferske bær",
+etonMess: "Eton mess",
+etonMessDescription: "Svensk marengs med limemarinerte svenske jordbær, lagt lagvis med krem og marengs",
+iceCream: "Iskrem",
+iceCreamDescription: "Hindbærsorbet/sjokolade/vanilje/appelsinsjokolade",
+
+
     
     // Menu Categories
     starters: "Forretter",
@@ -316,6 +434,47 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     menuPageSubtitle: "Tilberedt med kærlighed og de friskeste råvarer fra havet og lokale producenter",
     menuDescription: "Vores menu ændres efter sæson og tilgængelighed, men nedenfor finder du et udvalg af vores mest populære retter. Alle skaldyr serveres med brød, citron, aioli og tilbehør.",
     allergiesNote: "Allergier eller specialkost? Informer vores personale, så hjælper vi dig med alternativer.",
+    //huvudrätt
+    lobsterRollName: "Norsk hummer-roll",
+    lobsterRollDescription: "Serveres med briochebrød og toppet med frisk dild",
+    bruschettaName: "Bruschetta",
+    bruschettaDescription: "Ristet brød med hakket tomat, basilikum og hvidløg",
+    cevicheName: "Ceviche",
+    cevicheDescription: "Serveres med hjemmelavede nachos og koriander",
+    //till de små
+    friedChicken: "Friteret kylling",
+    friedChickenDescription: "Serveres med pommes frites & mayonnaise",
+    pancakes: "Pandekager",
+    pancakesDescription: "Serveres med flødeskum & jordbærsyltetøj",
+    // Hovedretter
+fishAndChips: "Fish & chips",
+fishAndChipsDescription: "Serveres med urtesvøbte pommes og tartarsauce",
+fishSoup: "Fisk- og skaldyrsuppe",
+fishSoupDescription: "Serveres med frisk brød",
+havstenssundBox: "Havstenssund-boks",
+havstenssundBoxDescription: "Friske rejer og krebs fra Havstenssund serveres med frisk brød og aioli",
+caesarSalad: "Caesarsalat",
+caesarSaladDescription: "Vælg mellem friturestegt kylling/rejer/halloumi",
+shrimpSandwich: "Rejesandwich",
+shrimpSandwichDescription: "Håndpillede rejer på brød med æg, mayonnaise, salat, tomat og syltet rødløg",
+burger: "Burger",
+burgerDescription: "180 gram højre, Väddö cheddar, syltet rødløg, crispsalat, tomat, brioche og trøffelmajones. Serveres med urtesvøbte pommes",
+steakFrites: "Steak frites",
+steakFritesDescription: "Serveres med urtesvøbte pommes, tomatsalat og béarnaisesauce",
+
+// Desserter
+cremeBrulee: "Crème Brûlée",
+cremeBruleeDescription: "Toppet med friske bær",
+brownie: "Brownie",
+brownieDescription: "Serveres med flødeskum og friske bær",
+etonMess: "Eton mess",
+etonMessDescription: "Svensk marengs med limemarinerede svenske jordbær, lagdelt med flødeskum og marengs",
+iceCream: "Is",
+iceCreamDescription: "Hindbærsorbet/chokolade/vanilje/appelsinchokolade",
+
+
+
+
     
     // Menu Categories
     starters: "Forretter",
@@ -403,6 +562,46 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     menuPageSubtitle: "Prepared with love and the freshest ingredients from the sea and local producers",
     menuDescription: "Our menu changes with the seasons and availability, but below you'll find a selection of our most popular dishes. All seafood is served with bread, lemon, aioli, and accompaniments.",
     allergiesNote: "Allergies or dietary requirements? Inform our staff and we'll help you with alternatives.",
+    //varmrätt
+    lobsterRollName: "Norwegian Lobster Roll",
+    lobsterRollDescription: "Served with brioche bread & topped with fresh dill",
+    bruschettaName: "Bruschetta",
+    bruschettaDescription: "Toasted bread with chopped tomatoes, basil & garlic",
+    cevicheName: "Ceviche",
+    cevicheDescription: "Served with homemade nachos & coriander",
+    //till de små
+    friedChicken: "Fried Chicken",
+    friedChickenDescription: "Served with fries & mayonnaise",
+    pancakes: "Pancakes",
+    pancakesDescription: "Served with whipped cream & strawberry jam",
+    // Mains
+fishAndChips: "Fish & chips",
+fishAndChipsDescription: "Served with herbed fries & tartar sauce",
+fishSoup: "Fish & seafood soup",
+fishSoupDescription: "Served with fresh bread",
+havstenssundBox: "Havstenssund Box",
+havstenssundBoxDescription: "Fresh shrimp & crayfish from Havstenssund served with fresh bread & aioli",
+caesarSalad: "Caesar Salad",
+caesarSaladDescription: "Choose between fried chicken/shrimp/halloumi",
+shrimpSandwich: "Shrimp Sandwich",
+shrimpSandwichDescription: "Hand-peeled shrimp on bread with egg, mayonnaise, lettuce, tomato & pickled red onion",
+burger: "Burger",
+burgerDescription: "180 grams of high beef, Väddö cheddar, pickled red onion, crisp lettuce, tomato, brioche & truffle mayo. Served with herbed fries",
+steakFrites: "Steak frites",
+steakFritesDescription: "Served with herbed fries, tomato salad and béarnaise sauce",
+
+// Desserts
+cremeBrulee: "Crème Brûlée",
+cremeBruleeDescription: "Topped with fresh berries",
+brownie: "Brownie",
+brownieDescription: "Served with cream & fresh berries",
+etonMess: "Eton Mess",
+etonMessDescription: "Swedish meringue with lime-marinated Swedish strawberries layered with cream and meringue",
+iceCream: "Ice Cream",
+iceCreamDescription: "Raspberry sorbet/chocolate/vanilla/orange chocolate",
+
+
+
     
     // Menu Categories
     starters: "Starters",
@@ -490,6 +689,46 @@ const translations: Record<LanguageCode, TranslationKeys> = {
     menuPageSubtitle: "Zubereitet mit Liebe und den frischesten Zutaten aus dem Meer und von lokalen Produzenten",
     menuDescription: "Unsere Speisekarte ändert sich je nach Saison und Verfügbarkeit, aber unten finden Sie eine Auswahl unserer beliebtesten Gerichte. Alle Meeresfrüchte werden mit Brot, Zitrone, Aioli und Beilagen serviert.",
     allergiesNote: "Allergien oder Diätanforderungen? Informieren Sie unser Personal, und wir helfen Ihnen mit Alternativen.",
+    //varmrätt
+    lobsterRollName: "Norwegischer Hummer-Roll",
+    lobsterRollDescription: "Serviert mit Briochebrot und frischem Dill",
+    bruschettaName: "Bruschetta",
+    bruschettaDescription: "Geröstetes Brot mit gehackten Tomaten, Basilikum und Knoblauch",
+    cevicheName: "Ceviche",
+    cevicheDescription: "Serviert mit hausgemachten Nachos und Koriander",
+    //
+    friedChicken: "Frittierte Hähnchen",
+    friedChickenDescription: "Serviert mit Pommes frites & Mayonnaise",
+    pancakes: "Pfannkuchen",
+    pancakesDescription: "Serviert mit Schlagsahne & Erdbeermarmelade",
+    // Hauptgerichte
+fishAndChips: "Fish & chips",
+fishAndChipsDescription: "Serviert mit Kräuterpommes und Tartarsauce",
+fishSoup: "Fisch- und Meeresfrüchtesuppe",
+fishSoupDescription: "Serviert mit frischem Brot",
+havstenssundBox: "Havstenssund Box",
+havstenssundBoxDescription: "Frische Garnelen & Krebse aus Havstenssund, serviert mit frischem Brot & Aioli",
+caesarSalad: "Caesar Salad",
+caesarSaladDescription: "Wählen Sie zwischen frittiertem Hühnchen/Garnelen/Halloumi",
+shrimpSandwich: "Shrimpsandwich",
+shrimpSandwichDescription: "Handgeschälte Garnelen auf Brot mit Ei, Mayonnaise, Salat, Tomaten und eingelegten roten Zwiebeln",
+burger: "Burger",
+burgerDescription: "180 Gramm Rinderhack, Väddö Cheddar, eingelegte rote Zwiebeln, Crisp-Lettuce, Tomaten, Brioche und Trüffelmayonnaise. Serviert mit Kräuterpommes",
+steakFrites: "Steak frites",
+steakFritesDescription: "Serviert mit Kräuterpommes, Tomatensalat und Bärlauchsoße",
+
+// Desserts
+cremeBrulee: "Crème Brûlée",
+cremeBruleeDescription: "Mit frischen Beeren garniert",
+brownie: "Brownie",
+brownieDescription: "Serviert mit Sahne und frischen Beeren",
+etonMess: "Eton Mess",
+etonMessDescription: "Schwedisches Baiser mit in Limette marinierten schwedischen Erdbeeren, geschichtet mit Sahne und Baiser",
+iceCream: "Eiscreme",
+iceCreamDescription: "Himbeersorbet/Schokolade/Vanille/Orangen-Schokolade",
+
+
+
     
     // Menu Categories
     starters: "Vorspeisen",

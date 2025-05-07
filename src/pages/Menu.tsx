@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,108 +10,110 @@ const Menu = () => {
   const menuCategories = [
     {
       id: "starters",
-      title: t.starters,
+      title: t.menuPageTitle,
       items: [
         {
-          name: "Norwegian lobsterroll",
-          description: "Serveras med briochebröd & toppat med färsk dill",
+          name: t.lobsterRollName,
+          description: t.lobsterRollDescription,
           price: "149 kr",
         },
         {
-          name: "Bruschetta",
-          description: "Rostat bröd med hackad tomat, basilika & vitlök",
+          name: t.bruschettaName,
+          description: t.bruschettaDescription,
           price: "119 kr",
         },
         {
-          name: "Ceviche",
-          description: "Serveras med egengjord nachos & koriander",
+          name: t.cevicheName,
+          description: t.cevicheDescription,
           price: "139 kr",
         },
       ],
     },
     {
       id: "Till de små",
-      title: t.drinks,
+      title: t.drinks,  // Detta kommer vara översatt till "Till de små" på svenska och "Til de små" på norska
       items: [
         {
-          name: "Friterad kyckling",
-          description: "Serveras med pommes & majonäs",
+          name: t.friedChicken,  // Översätt namnet på rätten till svenska och norska
+          description: t.friedChickenDescription,  // Översätt beskrivningen på rätten
           price: "129 kr",
         },
         {
-          name: "Pannkakor",
-          description: "Serveras med grädde & jordgubbssylt",
-          price: "95 kr/glas, 375 kr/flaska",
+          name: t.pancakes,  // Översätt namnet på rätten till svenska och norska
+          description: t.pancakesDescription,  // Översätt beskrivningen på rätten
+          price: "69 kr",
         },
       ],
     },
     {
       id: "mains",
-      title: t.mains,
+      title: t.mains, // Det här kommer att vara "Huvudrätter" på svenska, "Hovedretter" på norska, "Hovedretter" på danska, "Mains" på engelska och "Hauptgerichte" på tyska
       items: [
         {
-          name: "Fish & chips",
-          description: "Serveras med örtslungade pommes & tartarsås",
+          name: t.fishAndChips, // Översatt till korrekt språk
+          description: t.fishAndChipsDescription, // Översatt till korrekt språk
           price: "199 kr",
         },
         {
-          name: "Fisk & skaldjurs soppa",
-          description: "Serveras med färskt bröd",
+          name: t.fishSoup,
+          description: t.fishSoupDescription,
           price: "249 kr",
         },
         {
-          name: "Havstenssundslåda",
-          description: "Färska räkor & kräftor från havstenssund serveras med färskt bröd & aioli",
+          name: t.havstenssundBox,
+          description: t.havstenssundBoxDescription,
           price: "275 kr",
         },
         {
-          name: "Ceasarsallad",
-          description: "Välj mellan friterad kyckling/räkor/halloumi",
-          price: "199/199/229 kr",
+          name: t.caesarSalad,
+          description: t.caesarSaladDescription,
+          price: "199/199/229 kr", // Om detta pris beror på vilken variant du väljer kan du justera det
         },
         {
-          name: "Räkmacka",
-          description: "Handskalade räkor på bröd med ägg, majonäs, sallad, tomat & picklad rödlök",
+          name: t.shrimpSandwich,
+          description: t.shrimpSandwichDescription,
           price: "249 kr",
         },
         {
-          name: "Burgare",
-          description: "180 gram högrev, Väddö cheddar, picklad rödlök, crispsallad, tomat, brioche & tryffelmayo. Serveras med örtslungade pommes",
+          name: t.burger,
+          description: t.burgerDescription,
           price: "229 kr",
         },
         {
-          name: "Steak frites",
-          description: "Serveras med örtslungade pommes, tomatsallad och bearnaisesås",
+          name: t.steakFrites,
+          description: t.steakFritesDescription,
           price: "298 kr",
         },
       ],
     },
     {
       id: "desserts",
-      title: t.desserts,
+      title: t.desserts, // Det här kommer att vara "Desserter" på svenska, "Desserter" på norska, "Desserter" på danska, "Desserts" på engelska och "Nachtisch" på tyska
       items: [
         {
-          name: "Crème Brûlee",
-          description: "Toppad med färska bär",
+          name: t.cremeBrulee,
+          description: t.cremeBruleeDescription,
           price: "99 kr",
         },
         {
-          name: "Brownie",
-          description: "Serveras med grädde & färska bär",
+          name: t.brownie,
+          description: t.brownieDescription,
           price: "99 kr",
         },
         {
-          name: "Eton mess",
-          description: "Svensk marängsviss med limemarinerade svenska jordgubbar varvat med grädde och maräng",
+          name: t.etonMess,
+          description: t.etonMessDescription,
           price: "95 kr",
         },
         {
-          name: "Glass",
-          description: "Hallonsorbet/chocklad/vanilj/ apelsin chocklad",
+          name: t.iceCream,
+          description: t.iceCreamDescription,
           price: "39 kr/kula",
         },
       ],
-    },
+    }
+    
+    
   ];
 
   return (
