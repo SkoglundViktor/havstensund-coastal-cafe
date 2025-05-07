@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Anchor, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslations } from "@/translations/translations";
+import './Footer.css'
 
 export function Footer() {
   const { language } = useLanguage();
