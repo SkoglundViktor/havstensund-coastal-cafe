@@ -7,7 +7,7 @@ import { getTranslations } from "@/translations/translations";
 const dishes = [
   {
     id: 1,
-    name: "Skaldjursplatå",
+    name: "Havstenssundlåda",
     description:
       "Havets läckerheter på ett fat med hummer, krabba, räkor och ostron",
     image:
@@ -37,54 +37,61 @@ export function FeaturedDishes() {
 
   return (
     <section className="container mx-auto px-4 py-16">
-      <div className="text-center mb-10">
-        <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-          {t.featuredTitle}
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">{t.featuredSubtitle}</p>
-      </div>
+  <div className="text-center mb-10">
+    <div className="flex justify-center flex-column">
+      <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 m-0">
+        {t.featuredTitle}
+      </h2>
+    </div>
+    <p className="text-gray-600 max-w-2xl mx-auto">{t.featuredSubtitle}</p>
+  </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {dishes.map((dish) => (
-          <Card
-            key={dish.id}
-            className="overflow-hidden hover:shadow-lg transition-shadow"
-          >
-            <div className="h-48 overflow-hidden">
-  <img
-    src={dish.image}
-    alt={dish.name}
-    className={`w-full h-full object-cover transition-transform duration-500 
-      ${dish.id === 1 ? " " : ""} 
-      ${dish.id === 2 ? "object-[center_17%]" : ""}
-      ${dish.id === 3 ? "object-[center_45%]" : ""}
-    `}
-  />
-</div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {dishes.map((dish) => (
+      <Card
+        key={dish.id}
+        className="overflow-hidden hover:shadow-lg transition-shadow"
+      >
+        <div className="h-48 overflow-hidden">
+          <img
+            src={dish.image}
+            alt={dish.name}
+            className={`w-full h-full object-cover transition-transform duration-500 
+              ${dish.id === 1 ? "" : ""} 
+              ${dish.id === 2 ? "object-[center_17%]" : ""}
+              ${dish.id === 3 ? "object-[center_45%]" : ""}
+            `}
+          />
+        </div>
 
-            <CardContent className="p-6">
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="font-display text-xl font-bold">{dish.name}</h3>
-                <span className="font-medium text-coastal-deep-blue">
-                  {dish.price}
-                </span>
-              </div>
-              <p className="text-gray-600 mb-4">{dish.description}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+        <CardContent className="p-6 pt-0">
+          <div className="relative h-20 w-full mb-1 p-0">  {/* Justera mb här för att minska avståndet till bilden */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h3 className="font-display text-xl font-bold m-0 mb-0">
+                {dish.name}
+              </h3>
+            </div>
+          </div>
 
-      <div className="text-center mt-10">
-        <Link to="/menu">
-          <Button
-            size="lg"
-            className="bg-coastal-blue hover:bg-coastal-deep-blue"
-          >
-            {t.viewFullMenu}
-          </Button>
-        </Link>
-      </div>
-    </section>
+          {/* Beskrivning */}
+          <p className="text-gray-600 mb-2 mt-0 leading-none">{dish.description}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+
+  <div className="text-center mt-10">
+    <Link to="/menu">
+      <Button
+        size="lg"
+        className="bg-coastal-blue hover:bg-coastal-deep-blue"
+      >
+        {t.viewFullMenu}
+      </Button>
+    </Link>
+  </div>
+</section>
+
+
   );
 }
