@@ -70,7 +70,7 @@ const About = () => {
                   <path d="M20.55 10.23A9 9 0 1 1 8 4.94"></path>
                 </svg>
               </div>
-              
+              <h3 className="font-display text-xl font-medium mb-2">{t.sustainabilityTitle}</h3>
               <p className="text-gray-600">
                 {t.sustainabilityText}
               </p>
@@ -82,7 +82,7 @@ const About = () => {
                   <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
                 </svg>
               </div>
-              
+              <h3 className="font-display text-xl font-medium mb-2">{t.localProduceTitle}</h3>
               <p className="text-gray-600">
                 {t.localProduceText}
               </p>
@@ -94,7 +94,7 @@ const About = () => {
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
               </div>
-              
+              <h3 className="font-display text-xl font-medium mb-2">{t.qualityTitle}</h3>
               <p className="text-gray-600">
                 {t.qualityText}
               </p>

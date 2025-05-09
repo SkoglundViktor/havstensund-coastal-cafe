@@ -25,6 +25,7 @@ export function ContactInfo() {
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <MapPin className="h-7 w-7 text-coastal-deep-blue" />
             </div>
+            <h3 className="font-display text-xl font-bold mb-2">{t.address}</h3>
             <p className="text-gray-600">Sjövägen 43</p>
             <p className="text-gray-600">45773 Havstenssund</p>
             <a 
@@ -39,14 +40,11 @@ export function ContactInfo() {
         </Card>
         
         <Card className="hover:shadow-md transition-shadow">
-        <CardContent className="p-6 flex flex-col items-center justify-center text-center">
-
+          <CardContent className="p-6 flex flex-col items-center text-center">
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <Phone className="h-7 w-7 text-coastal-deep-blue" />
             </div>
-             
-            
-            
+            <h3 className="font-display text-xl font-bold mb-2">{t.contactSection}</h3>
             <p className="text-gray-600 mb-2">{t.phone}</p>
             <a 
               href="tel:+46706484748" 
@@ -62,8 +60,9 @@ export function ContactInfo() {
             <div className="w-14 h-14 bg-coastal-light-blue rounded-full flex items-center justify-center mb-4">
               <Clock className="h-7 w-7 text-coastal-deep-blue" />
             </div>
+            <h3 className="font-display text-xl font-bold mb-2">{t.openingHours}</h3>
             <div className="text-gray-600">
-              <div className="grid grid-cols-2 gap-x-2 text-center flex flex-col items-center text-center">
+              <div className="grid grid-cols-2 gap-x-2 text-center">
                 <span>{t.mondayFriday}</span>
                 <span>{t.saturdaySunday}</span>
               </div>
