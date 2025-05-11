@@ -45,7 +45,7 @@ export function Footer() {
             <h4 className="font-display text-lg font-bold mb-4">{t.openingHours}</h4>
             <div className="grid grid-cols-2 gap-1">
               <span className="opacity-80">{t.mondayFriday}</span>
-              <span className="opacity-80">{t.saturdaySunday}</span>
+              {/*<span className="opacity-80">{t.saturdaySunday}</span>*/}
             </div>
           </div>
         </div>

@@ -151,7 +151,7 @@ const Contact = () => {
                   <div className="text-gray-700">
                     <div className="grid grid-cols-2 gap-x-2">
                       <span>{t.mondayFriday}</span>
-                      <span>{t.saturdaySunday}</span>
+                      {/*<span>{t.saturdaySunday}</span>*/}
                     </div>
                   </div>
                 </div>

@@ -63,9 +63,9 @@ export function ContactInfo() {
               <Clock className="h-7 w-7 text-coastal-deep-blue" />
             </div>
             <div className="text-gray-600">
-              <div className="grid grid-cols-2 gap-x-2 text-center flex flex-col items-center text-center">
+              <div className="text-center flex flex-col items-center text-center">
                 <span>{t.mondayFriday}</span>
-                <span>{t.saturdaySunday}</span>
+                {/*<span>{t.saturdaySunday}</span>*/}
               </div>
             </div>
           </CardContent>
