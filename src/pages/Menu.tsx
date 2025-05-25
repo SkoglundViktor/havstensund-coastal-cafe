@@ -30,22 +30,6 @@ const Menu = () => {
       ],
     },
     {
-      id: "Till de små",
-      title: t.drinks, // Översatt till "Till de små" på svenska och "Til de små" på norska
-      items: [
-        {
-          name: t.friedChicken, // Översätt namnet på rätten till svenska och norska
-          description: t.friedChickenDescription, // Översätt beskrivningen på rätten
-          price: "129 kr",
-        },
-        {
-          name: t.pancakes, // Översätt namnet på rätten till svenska och norska
-          description: t.pancakesDescription, // Översätt beskrivningen på rätten
-          price: "69 kr",
-        },
-      ],
-    },
-    {
       id: "mains",
       title: t.mains, // Det här kommer att vara "Huvudrätter" på svenska, "Hovedretter" på norska, "Hovedretter" på danska, "Mains" på engelska och "Hauptgerichte" på tyska
       items: [
@@ -83,6 +67,22 @@ const Menu = () => {
           name: t.steakFrites,
           description: t.steakFritesDescription,
           price: "298 kr",
+        },
+      ],
+    },
+    {
+      id: "Till de små",
+      title: t.drinks, // Översatt till "Till de små" på svenska och "Til de små" på norska
+      items: [
+        {
+          name: t.friedChicken, // Översätt namnet på rätten till svenska och norska
+          description: t.friedChickenDescription, // Översätt beskrivningen på rätten
+          price: "129 kr",
+        },
+        {
+          name: t.pancakes, // Översätt namnet på rätten till svenska och norska
+          description: t.pancakesDescription, // Översätt beskrivningen på rätten
+          price: "69 kr",
         },
       ],
     },

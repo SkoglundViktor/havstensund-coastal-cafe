@@ -81,7 +81,7 @@ const Contact = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('./uteplats.jpg')",
             filter: "brightness(0.7)" 
           }}
         ></div>
