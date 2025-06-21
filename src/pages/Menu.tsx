@@ -13,18 +13,23 @@ const Menu = () => {
       title: t.menuPageTitle,
       items: [
         {
-          name: t.lobsterRollName,
-          description: t.lobsterRollDescription,
-          price: "149 kr",
+          name: t.SkagenRollName,
+          description: t.SkagenRollDescription,
+          price: "159 kr",
         },
         {
-          name: t.bruschettaName,
-          description: t.bruschettaDescription,
-          price: "119 kr",
+          name: t.CharkChipsName,
+          description: t.CharkChipsDescription,
+          price: "139 kr",
         },
         {
-          name: t.cevicheName,
-          description: t.cevicheDescription,
+          name: t.RöktaRäkorName,
+          description: t.RöktaRäkorDescription,
+          price: "139 kr",
+        },
+        {
+          name: t.CapreseName,
+          description: t.CapreseDescription,
           price: "139 kr",
         },
       ],
@@ -34,19 +39,24 @@ const Menu = () => {
       title: t.mains, // Det här kommer att vara "Huvudrätter" på svenska, "Hovedretter" på norska, "Hovedretter" på danska, "Mains" på engelska och "Hauptgerichte" på tyska
       items: [
         {
+          name: t.fishSoup,
+          description: t.fishSoupDescription,
+          price: "259 kr",
+        },
+        {
+          name: t.havstenssundBox,
+          description: t.havstenssundBoxDescription,
+          price: "299kr",
+        },
+        {
           name: t.fishAndChips, // Översatt till korrekt språk
           description: t.fishAndChipsDescription, // Översatt till korrekt språk
           price: "199 kr",
         },
         {
-          name: t.fishSoup,
-          description: t.fishSoupDescription,
-          price: "249 kr",
-        },
-        {
-          name: t.havstenssundBox,
-          description: t.havstenssundBoxDescription,
-          price: "275 kr",
+          name: t.shrimpSandwich,
+          description: t.shrimpSandwichDescription,
+          price: "255 kr",
         },
         {
           name: t.caesarSalad,
@@ -54,19 +64,14 @@ const Menu = () => {
           price: "199/199/229 kr", // Om detta pris beror på vilken variant du väljer kan du justera det
         },
         {
-          name: t.shrimpSandwich,
-          description: t.shrimpSandwichDescription,
-          price: "249 kr",
-        },
-        {
           name: t.burger,
           description: t.burgerDescription,
           price: "229 kr",
         },
         {
-          name: t.steakFrites,
-          description: t.steakFritesDescription,
-          price: "298 kr",
+          name: t.TodaysCatch,
+          description: t.TodaysCatchDescription,
+          price: "249 kr",
         },
       ],
     },
@@ -91,8 +96,8 @@ const Menu = () => {
       title: t.desserts, // Det här kommer att vara "Desserter" på svenska, "Desserter" på norska, "Desserter" på danska, "Desserts" på engelska och "Nachtisch" på tyska
       items: [
         {
-          name: t.cremeBrulee,
-          description: t.cremeBruleeDescription,
+          name: t.Pavlova,
+          description: t.PavlovaDescription,
           price: "99 kr",
         },
         {
@@ -101,14 +106,9 @@ const Menu = () => {
           price: "99 kr",
         },
         {
-          name: t.etonMess,
-          description: t.etonMessDescription,
+          name: t.Gelato,
+          description: t.GelatoDescription,
           price: "95 kr",
-        },
-        {
-          name: t.iceCream,
-          description: t.iceCreamDescription,
-          price: "39 kr/kula",
         },
       ],
     },
